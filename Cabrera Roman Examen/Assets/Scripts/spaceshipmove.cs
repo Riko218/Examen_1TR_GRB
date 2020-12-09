@@ -26,26 +26,22 @@ public class spaceshipmove : MonoBehaviour
         float desplZ = Input.GetAxis("Vertical");
         float desplX = Input.GetAxis("Horizontal");
 
-        //Movimiento de la nave en X con los limites de el plano.
-
-        if (posX < 172f && posX > -225f || posX < -225f && desplX > 0 || posX > 172f && desplX < 0)
+        //Movimiento de la nave en X
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed * desplX);
             //print (desplX);
         }
 
-        //Movimiento de la nave en Z con la limitacion de ir hacia atras y los del plano.
+        //Movimiento de la nave en Z con la limitacion de ir hacia atras.
         if (desplZ >= 0)
         {
-            if (posZ < 172f && posZ > -225f || posZ < -225f && desplZ > 0)
-
                 transform.Translate(Vector3.back * Time.deltaTime * speed * desplZ);
             //print (desplZ);        
         }
 
     }
 
-    void AlturaNave()
+    void AlturaNave() //Metodo para aumentar la altura de la nave.
     {
         float posY = transform.position.y;
 
